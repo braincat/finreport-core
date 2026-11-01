@@ -1,3 +1,5 @@
 __pycache__/
 output/_*
 *.pyc
+Instinct-*
+tools/make_instinct_package.py
