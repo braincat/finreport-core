@@ -1,0 +1,231 @@
+{
+  "artifact": "FinReport-Core MVP",
+  "version": "1.0.0",
+  "case": "TK26102311QJVC85",
+  "builder": "bizast_bot (Base44 runtime)",
+  "built_at": "2026-10-31T03:56:00+00:00",
+  "purpose": "提交 Instinct 交叉核查",
+  "environment": {
+    "python": "3.11.16",
+    "openpyxl": "3.1.5",
+    "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.36",
+    "network_access_during_tests": "blocked (socket monkeypatched)"
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 29,
+      "sha256": "81f99d3b187c113ba46111de2ed6907f354a654ebe76a1294e89323440aa0a16"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3154,
+      "sha256": "db232fc933269b474de9530dcd98049cab20b811af39cd1ca5707c8cd3073360"
+    },
+    {
+      "path": "config/demo_config.json",
+      "bytes": 1882,
+      "sha256": "f769e1e22139fdf86051bb27b277822fee3abd64ab98384bbcd9bd5a49675983"
+    },
+    {
+      "path": "finreport/__init__.py",
+      "bytes": 115,
+      "sha256": "741432d3f4bd459e34e87b9561fa2125ccf7ff87ddf48ebb851ea30fc2dbd034"
+    },
+    {
+      "path": "finreport/cli.py",
+      "bytes": 1705,
+      "sha256": "70c7e0a6bb3b1a7db00d18769ad932ab6a22c5c172b1dee5b31f830fcd71e448"
+    },
+    {
+      "path": "finreport/engine.py",
+      "bytes": 11672,
+      "sha256": "04771b92d9529f656fd50632dbb8c717982de7394f62dca8c93dbc3b71326fcd"
+    },
+    {
+      "path": "finreport/normalize.py",
+      "bytes": 3345,
+      "sha256": "3d840c37dfff7579671f3459fc166d311aca159bc755afccfaf62c0987cf4224"
+    },
+    {
+      "path": "finreport/schema.py",
+      "bytes": 3202,
+      "sha256": "f53f43f3e1d9e24f744010022bb776006bac43bc638a24aefb426ec0ca820d8d"
+    },
+    {
+      "path": "output/Audit_Error_Log.csv",
+      "bytes": 65,
+      "sha256": "9e3284d0e5cdef24e875266901d44961ada13eeb568508c4f3a8e56cf21d3785"
+    },
+    {
+      "path": "output/FinReport_彙整總表.xlsx",
+      "bytes": 59432,
+      "sha256": "33c8a986103fe43067c3dc15739e49497cf9469d8f0c2d0f134ffa60019d3075"
+    },
+    {
+      "path": "run_demo.sh",
+      "bytes": 355,
+      "sha256": "dcc2aecd954a719d912ae8378b5ec2015ab5fa6e28cbd435e48ece4f993d6a9b"
+    },
+    {
+      "path": "samples/expected.json",
+      "bytes": 204142,
+      "sha256": "4b6024ea8ed172104c57ddae5607884a34a6cb0ff8299fabe90cca7504fb7d93"
+    },
+    {
+      "path": "samples/出單明細_demo.csv",
+      "bytes": 61065,
+      "sha256": "051fee5a2f915a3bf107fc502315e0a0a35ee7affd7014ef611e8d4dbd756590"
+    },
+    {
+      "path": "samples/業績目標_demo.csv",
+      "bytes": 5681,
+      "sha256": "06d525b75de33593eb6506283b588dce62c091ff31beb3fb046a6c61fbf35010"
+    },
+    {
+      "path": "tests/test_acceptance.py",
+      "bytes": 5662,
+      "sha256": "c631a4f2fd80e4502500372866de7d7b86a5374a6d47c304468fd779a2feda5d"
+    },
+    {
+      "path": "tools/make_demo_data.py",
+      "bytes": 5265,
+      "sha256": "ee7ee6d11e0a951097dafbe7951d16d565d11944ce45c46fa92948ea0501f888"
+    },
+    {
+      "path": "作品集_FinReport-Core.md",
+      "bytes": 2223,
+      "sha256": "9b8e57409907dced68fa553a5284de5ed9abb4444808db6aac4eda0e0d7f101a"
+    },
+    {
+      "path": "操作與去識別化指南.md",
+      "bytes": 2785,
+      "sha256": "6f0b2f403a00b6f5bfdec9044f49b6c26f74ce51b544298577c8765b22464110"
+    },
+    {
+      "path": "測試報告_驗收_v1.0.md",
+      "bytes": 2579,
+      "sha256": "8f36415d2c38ef792bab85a5c1fc4f242293057c5248bb9d1300c8a40aa1d9d0"
+    }
+  ],
+  "file_count": 19,
+  "tests": {
+    "exit_code": 0,
+    "benchmark_sec": null,
+    "cases_total": 18,
+    "cases_passed": 18,
+    "cases": [
+      {
+        "case": "A1 執行成功且未被阻斷",
+        "result": "PASS",
+        "detail": "status=OK"
+      },
+      {
+        "case": "A2 合併筆數等於來源筆數 1000",
+        "result": "PASS",
+        "detail": "merged=1000"
+      },
+      {
+        "case": "A3 1,000 筆執行時間 ≤ 15 秒",
+        "result": "PASS",
+        "detail": "0.02s"
+      },
+      {
+        "case": "B1 輸出筆數與期望值一致",
+        "result": "PASS",
+        "detail": "1000 vs 1000"
+      },
+      {
+        "case": "B2 欄位計算正確率 100%",
+        "result": "PASS",
+        "detail": "100.00%（0 個不符）"
+      },
+      {
+        "case": "C[missing_key] 立即停止並回報阻斷",
+        "result": "PASS",
+        "detail": "status=BLOCKED"
+      },
+      {
+        "case": "C[missing_key] 未產出正式報表",
+        "result": "PASS",
+        "detail": "output/_blocked_missing_key.xlsx"
+      },
+      {
+        "case": "C[missing_key] Audit_Error_Log 含 A01（主鍵空白）",
+        "result": "PASS",
+        "detail": "出單明細,3,業務代碼,A01,,對應鍵空白，無法與其他報表合併,阻斷"
+      },
+      {
+        "case": "C[missing_key] 程序未崩潰並回傳結果",
+        "result": "PASS",
+        "detail": ""
+      },
+      {
+        "case": "C[bad_amount] 立即停止並回報阻斷",
+        "result": "PASS",
+        "detail": "status=BLOCKED"
+      },
+      {
+        "case": "C[bad_amount] 未產出正式報表",
+        "result": "PASS",
+        "detail": "output/_blocked_bad_amount.xlsx"
+      },
+      {
+        "case": "C[bad_amount] Audit_Error_Log 含 A03（金額為文字型態）",
+        "result": "PASS",
+        "detail": "出單明細,2,保費金額,A03,十二萬,amount 正規化失敗：NOT_NUMERIC,阻斷"
+      },
+      {
+        "case": "C[bad_amount] 程序未崩潰並回傳結果",
+        "result": "PASS",
+        "detail": ""
+      },
+      {
+        "case": "C[duplicate_key] 立即停止並回報阻斷",
+        "result": "PASS",
+        "detail": "status=BLOCKED"
+      },
+      {
+        "case": "C[duplicate_key] 未產出正式報表",
+        "result": "PASS",
+        "detail": "output/_blocked_duplicate_key.xlsx"
+      },
+      {
+        "case": "C[duplicate_key] Audit_Error_Log 含 A02（主鍵重複）",
+        "result": "PASS",
+        "detail": "出單明細,3,保單號碼,A02,P100000001,主鍵重複（首次出現於第 2 列）,阻斷"
+      },
+      {
+        "case": "C[duplicate_key] 程序未崩潰並回傳結果",
+        "result": "PASS",
+        "detail": ""
+      },
+      {
+        "case": "D1 完全斷網環境仍可完成",
+        "result": "PASS",
+        "detail": "status=OK, rows=1000"
+      }
+    ],
+    "raw_tail": "合計 18/18 通過（總耗時 0.43s）"
+  },
+  "reproduce": [
+    "pip install openpyxl",
+    "python3 tools/make_demo_data.py",
+    "python3 -m finreport.cli --config config/demo_config.json --audit output/Audit_Error_Log.csv",
+    "python3 tests/test_acceptance.py"
+  ],
+  "declared_constraints": [
+    "無任何網路呼叫（含 LLM API）",
+    "無資料庫、無常駐服務，單機可執行",
+    "阻斷級稽核成立時不產出正式報表"
+  ],
+  "not_claimed": [
+    "未經 Tasker 登入牆驗證案主真實需求",
+    "未與案主聯絡",
+    "未做資安滲透測試或效能壓力測試（僅 1,000 筆基準集）"
+  ],
+  "artifact_docs": {
+    "reading_copy": "Instinct-FinReport-Core-MVP-20261031-v1.md",
+    "machine_copy": "Instinct-FinReport-Core-MVP-20261031-v1-機器副本.json"
+  }
+}
